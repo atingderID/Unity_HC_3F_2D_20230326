@@ -1,13 +1,14 @@
-using UnityEngine;//¨Ï¥ÎUnity ¤ŞÀºªº¨ç¦¡®w
-using UnityEngine.SceneManagement; //¥Î©ó¨Ò¦p¹CÀ¸¶}©l¥H¤ÎÂ÷¶}¹CÀ¸µ¥¹CÀ¸³õ´º¤Á´«
-//ª`·N­n»PÀÉ¦W¤@¼Ë¡A¥]§t¤j¤p¼g
+ï»¿using UnityEngine;//ä½¿ç”¨Unity å¼•æ“çš„å‡½å¼åº«
+using UnityEngine.SceneManagement; //ç”¨æ–¼ä¾‹å¦‚éŠæˆ²é–‹å§‹ä»¥åŠé›¢é–‹éŠæˆ²ç­‰éŠæˆ²å ´æ™¯åˆ‡æ›
+//æ³¨æ„è¦èˆ‡æª”åä¸€æ¨£ï¼ŒåŒ…å«å¤§å°å¯«
 public class MenuManager : MonoBehaviour
 {
-	//Method=Function(¥]§t¥\¯àªºµ{¦¡½X°Ï¶ô)¡AField(Àx¦sÅÜ¼Æ¸ê®Æªº°Ï°ì)¡AProperty(Åı¥~¬ÉÅª¨ú»P½Æ¼g¸ê®Æ)
-	//³o¬O¤@­ÓMethod¡A·|¥]§t¤@­Óµ{¦¡½X°Ï¶ô¡A¨Ò¦p¥i¥H¦b³o­Ó°Ï¶ô¤¤©ñ¤J¥\¯à..¥Ñ ­×¹¢µü ¸ê®ÆÃş«¬ ¤èªk¦WºÙ()²Õ¦¨
+	//Method=Function(åŒ…å«åŠŸèƒ½çš„ç¨‹å¼ç¢¼å€å¡Š)ï¼ŒField(å„²å­˜è®Šæ•¸è³‡æ–™çš„å€åŸŸ)ï¼ŒProperty(è®“å¤–ç•Œè®€å–èˆ‡è¤‡å¯«è³‡æ–™)
+	//é€™æ˜¯ä¸€å€‹Methodï¼ŒæœƒåŒ…å«ä¸€å€‹ç¨‹å¼ç¢¼å€å¡Šï¼Œä¾‹å¦‚å¯ä»¥åœ¨é€™å€‹å€å¡Šä¸­æ”¾å…¥åŠŸèƒ½..ç”± ä¿®é£¾è© è³‡æ–™é¡å‹ æ–¹æ³•åç¨±()çµ„æˆ
+	//void=ä¸æœƒå›å‚³ä»»ä½•è³‡æ–™é¡å‹
 	public void StartGame()
 	{
-		SceneManager.LoadScene("¹CÀ¸µe­±");
+		SceneManager.LoadScene("éŠæˆ²ç•«é¢");
 	}
 	public void QuitGame()
 	{
