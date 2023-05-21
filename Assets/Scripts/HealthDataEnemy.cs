@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//使用繼承概念，class名稱要使用父程式的名稱
 [CreateAssetMenu(menuName ="Stella/HealthDataEnemy")]
 public class HealthDataEnemy : HealthData
 {
