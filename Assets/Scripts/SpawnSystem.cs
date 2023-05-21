@@ -2,6 +2,7 @@
 
 public class SpawnSystem : MonoBehaviour
 {
+	//生成系統欄位資料,取名interval，意為間隔
 	[Header("生成間隔"),Range(0,10)]
 	public float interval = 3.5f;
 
