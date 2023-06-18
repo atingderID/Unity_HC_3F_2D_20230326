@@ -50,12 +50,12 @@ public class LevelManager : MonoBehaviour
 	{
 		exp += getExp;
 		//exp=getExp+exp
-		print($"<color=yellow>當前經驗值:{exp}</color>");
+		//print($"<color=yellow>當前經驗值:{exp}</color>");
 		
 		//如果經驗值>=當前等級需求並且等級<等級上限 就升級
 		if (exp >= expNeeds[lv - 1] && lv<lvMax)
 		{
-			exp = expNeeds[lv - 1];
+			exp -= expNeeds[lv - 1];
 			//計算多出來的經驗
 			lv++;
 			//等級提升
@@ -81,8 +81,53 @@ public class LevelManager : MonoBehaviour
 
 		for (int i = 0; i < 3; i++)
 		{
-			goChooseSkills[i].transform.Find("技能名稱").GetComponent<TextMeshProUGUI>().text = randomSkill[i].nameSkill;
+			goChooseSkills[i].transform.Find("技能名稱").Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = randomSkill[i].nameSkill;
+			goChooseSkills[i].transform.Find("技能描述").Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = randomSkill[i].description;
+			goChooseSkills[i].transform.Find("技能等級").Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = "等級Lv"+randomSkill[i].lv;
+
+			goChooseSkills[i].transform.Find("技能圖片").GetComponent<Image>().sprite = randomSkill[i].iconSkill;
 		}
+	}
+
+	public void ClickSkillButton(int number)
+	{
+		print("玩家按下的技能是:" + randomSkill[number].nameSkill);
+
+		//該技能等級+1
+		randomSkill[number].lv++;
+		//按下技能升級
+		if (randomSkill[number].nameSkill == "移動速度") UpdateMoveSpeed(number);
+		if (randomSkill[number].nameSkill == "武器攻擊") UpdateWeaponAttack();
+		if (randomSkill[number].nameSkill == "武器間隔") UpdateWeaponInterval();
+		if (randomSkill[number].nameSkill == "玩家血量") UpdatePlayerHealth();
+		if (randomSkill[number].nameSkill == "經驗值範圍") UpdateExpRange();
+
+	}
+	[Header("控制系統:企鵝")]
+	public ControlSystem controlSystem;
+
+	public void UpdateMoveSpeed(int number)
+	{
+		//取得玩家選取技能的等級
+		int lv = randomSkill[number].lv;
+		//控制系統 的 移動速度=玩家選取技能的該等級數值
+		controlSystem.moveSpeed = randomSkill[number].skillValues[lv - 1];
+	}
+	public void UpdateWeaponAttack()
+	{
+
+	}
+	public void UpdateWeaponInterval()
+	{
+
+	}
+	public void UpdatePlayerHealth()
+	{
+
+	}
+	public void UpdateExpRange()
+	{
+
 	}
 }
 
