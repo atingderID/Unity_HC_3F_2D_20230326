@@ -1,6 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class LevelManager : MonoBehaviour
 {
@@ -19,6 +20,15 @@ public class LevelManager : MonoBehaviour
 
 	public float[] expNeeds = { 100, 200, 300 };
 	//使用陣列儲存每次升級需要的經驗值
+
+	[Header("升級面板")]
+	public GameObject goLevelUp;
+	[Header("技能選取區塊1~3")]
+	public GameObject[] goChooseSkills;
+	[Header("全部技能")]
+	public DataSkill[] dataskill;
+
+	public List<DataSkill> randomSkill = new List<DataSkill>();
 
 	[ContextMenu("更新經驗值需求表")]
 	//在Unity中LevelManager上按右鍵就會出現，程式有改就要按一次
@@ -50,12 +60,19 @@ public class LevelManager : MonoBehaviour
 			//等級提升
 			textLv.text = $"Lv{lv}";
 			//更新等級介面
+			LevelUp();
 		}
 
 		textExp.text = $"{exp}/{expNeeds[lv - 1]}";
 		imgExp.fillAmount = exp / expNeeds[lv - 1];
 
 		
+	}
+
+	private void LevelUp()
+	{
+		goLevelUp.SetActive(true);
+		//遊戲物件標題的勾勾勾起
 	}
 }
 
