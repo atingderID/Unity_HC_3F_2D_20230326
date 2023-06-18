@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Linq;
 
 public class LevelManager : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class LevelManager : MonoBehaviour
 	[Header("技能選取區塊1~3")]
 	public GameObject[] goChooseSkills;
 	[Header("全部技能")]
-	public DataSkill[] dataskill;
+	public DataSkill[] dataskills;
 
 	public List<DataSkill> randomSkill = new List<DataSkill>();
 
@@ -73,6 +74,15 @@ public class LevelManager : MonoBehaviour
 	{
 		goLevelUp.SetActive(true);
 		//遊戲物件標題的勾勾勾起
+		randomSkill = dataskills.Where(x => x.lv < 5).ToList();
+		//x.lv<5為條件:挑出所有等級小於5的技能
+		randomSkill = randomSkill.OrderBy(x => Random.Range(0, 999)).ToList();
+		//洗牌，Random.Range(0,999)為重新排序,數字夠大即可達到隨機效果
+
+		for (int i = 0; i < 3; i++)
+		{
+			goChooseSkills[i].transform.Find("技能名稱").GetComponent<TextMeshProUGUI>().text = randomSkill[i].nameSkill;
+		}
 	}
 }
 
