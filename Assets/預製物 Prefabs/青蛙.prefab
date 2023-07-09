@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1582780871570958215}
   - component: {fileID: 1292264936}
   - component: {fileID: 1292264941}
-  - component: {fileID: 1665152690790485765}
+  - component: {fileID: 2540815805258780165}
   m_Layer: 0
   m_Name: "\u9752\u86D9"
   m_TagString: Untagged
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3.5
-  player: {fileID: 0}
+  data: {fileID: 11400000, guid: 39daf604182e7b7479d9b8be2d28652e, type: 2}
 --- !u!50 &1292264941
 Rigidbody2D:
   serializedVersion: 4
@@ -161,7 +161,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1665152690790485765
+--- !u!114 &2540815805258780165
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,7 +170,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1421830808765371106}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4372887644447e0418676124ed146a4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 93fd73267dd64d14f99f6fa6af5d297a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 39daf604182e7b7479d9b8be2d28652e, type: 2}
+  prefabDamage: {fileID: 5967540666002938234, guid: e7697dbf91b10b74e9571f9a422da61f,
+    type: 3}

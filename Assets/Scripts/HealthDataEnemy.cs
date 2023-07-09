@@ -8,4 +8,10 @@ public class HealthDataEnemy : HealthData
 	public GameObject prefabExp;
 	[Header("±¼¸¨¸gÅç­È¾÷²v"), Range(0, 1)]
 	public float dropprobability;
+	[Header("§ğÀ»¤O"),Range(0,1000)]
+	public float attack = 20;
+	[Header("§ğÀ»¶¡¹j"),Range(0,5)]
+	public float attackInterval = 2.5f;
+	[Header("§ğÀ»¶ZÂ÷"),Range(0,10)]
+	public float attackRange = 3;
 }
