@@ -14,6 +14,7 @@ public class EnemySystem : MonoBehaviour
 	public HealthDataEnemy data;
 
 	private Transform player;
+	private DamagePlayer damagePlayer;
 	private float timer;
 
 	//繪製圖示事件:圖示只有在Unity編輯器內看到
@@ -31,6 +32,7 @@ public class EnemySystem : MonoBehaviour
 	private void Awake()
 	{
 		player = GameObject.Find("企鵝主角").transform;
+		damagePlayer = player.GetComponent<DamagePlayer>();
 	}
 	private void Update()
 	{
@@ -53,6 +55,7 @@ public class EnemySystem : MonoBehaviour
 			//就攻擊
 			print("<color=#9966ff>攻擊玩家!</color>");
 			//並且計時器歸零
+			damagePlayer.GetDamage(data.attack);
 			timer = 0;
 		}
 	}

@@ -17,8 +17,7 @@ public class LevelManager : MonoBehaviour
 
 	private int lv = 1;
 	private float exp;
-	private float expNeed = 100;
-	//每次升級需要的經驗值
+	
 
 	public float[] expNeeds = { 100, 200, 300 };
 	//使用陣列儲存每次升級需要的經驗值
@@ -93,6 +92,8 @@ public class LevelManager : MonoBehaviour
 
 			goChooseSkills[i].transform.Find("技能圖片").GetComponent<Image>().sprite = randomSkill[i].iconSkill;
 		}
+		AudioClip sound = SoundManager.instance.btnLevelUp;
+		SoundManager.instance.PlaySound(sound, 0.7f, 1.3f);
 	}
 
 	public void ClickSkillButton(int number)
@@ -111,7 +112,8 @@ public class LevelManager : MonoBehaviour
 		Time.timeScale = 1;
 		//選取技能後恢復時間並關閉頁面
 		goLevelUp.SetActive(false);
-
+		AudioClip sound = SoundManager.instance.btnUpdateSkill;
+		SoundManager.instance.PlaySound(sound, 0.7f, 1.3f);
 	}
 	#endregion
 

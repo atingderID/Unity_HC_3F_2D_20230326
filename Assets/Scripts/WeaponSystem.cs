@@ -15,6 +15,8 @@ public class WeaponSystem : MonoBehaviour
 	private void SpwanWeapon()
 	{
 		Instantiate(prefabWeapon, pointWeapon.position, pointWeapon.rotation);
+		AudioClip sound = SoundManager.instance.playeeShoot;
+		SoundManager.instance.PlaySound(sound, 0.7f, 2);
 	}
 	private void Awake()
 	{
